@@ -1,3 +1,3 @@
 # iConverter
-Don't like the colors of an image. Use iConverter to generate 4 random alternative images. 
+Don't like the colors of an image. Use iConverter to generate 7 random alternative images. 
 
