@@ -19,6 +19,7 @@ def MainMethod():
         doublegreen = random.randrange(1,10000)
         doublered = random.randrange(1, 10000)
 
+        # Generating image names
         BluefinalImage = str(bname) + ".jpg"
         GreenfinalImage = str(gname) + ".jpg"
         RedfinalImage = str(rname) + ".jpg"
@@ -27,11 +28,13 @@ def MainMethod():
         doublegreenfinalImage = str(doublegreen) + ".jpg"
         doubleredfinalImage = str(doublered) + ".jpg"
 
+        # Showing the file path
         path = filedialog.askopenfilename(filetypes=[("Image File", '.jpg'), ("PNG", '.png')])
         img = Image.open(path)
         newImage = img.convert("RGBA")
         r, g, b, a = newImage.split()
 
+        # Merge 4 Color channels together
         blueimg = Image.merge("RGBA", (b, g, r, a))
         greenimg = Image.merge("RGBA", (g, r, b, a))
         redimg = Image.merge("RGBA", (r, b, g, a))
@@ -40,6 +43,7 @@ def MainMethod():
         doublegreenimg = Image.merge("RGBA",(r,g,g,a))
         doubleredimg = Image.merge("RGBA",(r,r,g,a))
 
+        # Convert RGBA images into RGB
         finalBlueImage = blueimg.convert("RGB")
         finalGreenImage = greenimg.convert("RGB")
         finalRedImage = redimg.convert("RGB")
@@ -48,6 +52,7 @@ def MainMethod():
         finaldoublegreenImage = doublegreenimg.convert("RGB")
         finaldoubleredImage = doubleredimg.convert("RGB")
 
+        #adding the image saving path
         finalBlueImage.save(savePath + BluefinalImage)
         finalGreenImage.save(savePath + GreenfinalImage)
         finalRedImage.save(savePath + RedfinalImage)
@@ -62,6 +67,10 @@ def MainMethod():
 
     except:
         tkinter.messagebox.showerror("Error", "No file has been selected")
+
+# GUI Design
+
+# *********************** install tkinter ***********************
 
 
 root = Tk()
