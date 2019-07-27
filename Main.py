@@ -15,11 +15,17 @@ def MainMethod():
         gname = random.randrange(1, 10000)
         rname = random.randrange(1, 10000)
         mname = random.randrange(1, 10000)
+        doubleblue = random.randrange(1,10000)
+        doublegreen = random.randrange(1,10000)
+        doublered = random.randrange(1, 10000)
 
         BluefinalImage = str(bname) + ".jpg"
         GreenfinalImage = str(gname) + ".jpg"
         RedfinalImage = str(rname) + ".jpg"
         MixfinalImage = str(mname) + ".jpg"
+        doublebluefinalImage = str(doubleblue) + ".jpg"
+        doublegreenfinalImage = str(doublegreen) + ".jpg"
+        doubleredfinalImage = str(doublered) + ".jpg"
 
         path = filedialog.askopenfilename(filetypes=[("Image File", '.jpg'), ("PNG", '.png')])
         img = Image.open(path)
@@ -29,19 +35,30 @@ def MainMethod():
         blueimg = Image.merge("RGBA", (b, g, r, a))
         greenimg = Image.merge("RGBA", (g, r, b, a))
         redimg = Image.merge("RGBA", (r, b, g, a))
-        miximg = Image.merge("RGBA", (g, b, r, a))
+        miximg = Image.merge("RGBA", (r, b, r, a))
+        doubleblueimg = Image.merge("RGBA",(r,b,b,a))
+        doublegreenimg = Image.merge("RGBA",(r,g,g,a))
+        doubleredimg = Image.merge("RGBA",(r,r,g,a))
 
         finalBlueImage = blueimg.convert("RGB")
         finalGreenImage = greenimg.convert("RGB")
         finalRedImage = redimg.convert("RGB")
         finalMixImage = miximg.convert("RGB")
+        finaldoubleblueImage = doubleblueimg.convert("RGB")
+        finaldoublegreenImage = doublegreenimg.convert("RGB")
+        finaldoubleredImage = doubleredimg.convert("RGB")
 
         finalBlueImage.save(savePath + BluefinalImage)
         finalGreenImage.save(savePath + GreenfinalImage)
         finalRedImage.save(savePath + RedfinalImage)
         finalMixImage.save(savePath + MixfinalImage)
+        finaldoubleblueImage.save(savePath + doublebluefinalImage)
+        finaldoublegreenImage.save(savePath + doublegreenfinalImage)
+        finaldoubleredImage.save(savePath + doubleredfinalImage)
+
 
         lbl3.config(text="Image status : Generated")
+
 
     except:
         tkinter.messagebox.showerror("Error", "No file has been selected")
