@@ -66,7 +66,7 @@ def MainMethod():
 
 
     except:
-        tkinter.messagebox.showerror("Error", "No file has been selected")
+        tkinter.messagebox.showerror("Oops!", "No file has been selected")
 
 # GUI Design
 
