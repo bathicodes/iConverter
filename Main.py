@@ -5,7 +5,6 @@ from PIL import Image
 import random
 
 # change the save path according to your OS
-
 savePath = "/Users/bathiyaseneviratne/Desktop/"
 
 
