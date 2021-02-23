@@ -98,6 +98,9 @@ lbl3.pack(pady=10)
 lbl2 = Label(root, text="Developed by Bathiya Seneviratne", fg="red", font=("Arial", 12), bg="#f1f1f1")
 lbl2.pack(side=BOTTOM, fill=X)
 
+lbl4 = Label(root, text="GitHub (@bathicodes)", fg="red", font=("Arial", 12), bg="#f1f1f1")
+lbl4.pack(side=BOTTOM, fill=X)
+
 but = Button(root, text="Select & Save", width=20, height=2, command=MainMethod)
 but.pack(side=BOTTOM, pady=10)
 
